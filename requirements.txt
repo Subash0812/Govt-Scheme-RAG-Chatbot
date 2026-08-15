@@ -1,0 +1,20 @@
+# Core
+pydantic>=2.6
+python-dotenv>=1.0
+
+# Retrieval
+rank-bm25>=0.2.2
+sentence-transformers>=3.0   # embedding + cross-encoder reranking model host
+faiss-cpu>=1.8                # dense vector index (swap for a managed vector DB in prod)
+numpy>=1.26
+
+
+# Eval / utils
+tqdm>=4.66
+scikit-learn>=1.4            # only used for simple eval metrics
+
+streamlit
+
+# Optional, for the WhatsApp interface layer added in Phase 4 (not needed for Phase 1)
+# fastapi>=0.111
+# uvicorn>=0.30
