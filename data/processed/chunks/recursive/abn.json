@@ -1,0 +1,71 @@
+[
+  {
+    "chunk_id": "abn.txt_recursive_1",
+    "text": "Anti Bird NetAre you sure you want to  ?  an initiative by the Agriculture Department of the Rajasthan government, promotes protected cultivation practices among farmers by\nproviding subsidies for installing low-cost plastic tunnels. The subsidy amount may be capped for each farmer, depending on the\nscheme's provisions and available funds.Important pointsThe work can be started only after the administrative approval/work order is\nissued by the Horticulture Department.After establishment, verification can be done by the committee formed.The grant amount can be\npaid directly into the farmer's bank account or to the producing firm based on the written consent of the farmer.\n\n50 percent\nsubsidy is payable for a maximum area of 5000 square meters.\n\nThe applicant should be a native of Rajasthan.The applicant\nmust have ownership of cultivable land, his own fruit orchard, and an irrigation source.",
+    "metadata": {
+      "scheme_name": "Anti-Bird Net Scheme",
+      "abbreviation": null,
+      "state": "Rajasthan",
+      "ministry": null,
+      "department": "Agriculture Department",
+      "scheme_type": "Subsidy",
+      "sponsorship": null,
+      "beneficiary_category": [
+        "Farmers"
+      ],
+      "application_mode": "Online",
+      "official_url": "https://sso.rajasthan.gov.in/signin",
+      "source_file": "abn.txt",
+      "section": "General",
+      "chunk_index": 1,
+      "chunk_method": "recursive",
+      "token_count": 173
+    }
+  },
+  {
+    "chunk_id": "abn.txt_recursive_2",
+    "text": "50 percent\nsubsidy is payable for a maximum area of 5000 square meters.\n\nThe applicant should be a native of Rajasthan.The applicant\nmust have ownership of cultivable land, his own fruit orchard, and an irrigation source.\n\nOnlineRegistrationStep-1:\nApplicant have to visit the official portal. Step-2: Click on the option \"Registerâ€​.Step-3: Then you will be redirected to the SSO\nregistration page. The registration page will appear with the following options. CitizenStep-4: Choose the either one option from the Jan\nAadhaar Or Google to process further.Jan Aadhaar: Enter the Jan Aadhaar number, click on the 'Next' button,Select your name,\nthe name of the head of the family and all the other members and Click on the 'Send OTP' button. Enter the 'OTP' and\nClick on the 'Verify OTP' button to Complete the registration. Google: Enter the Gmail ID, click on the 'Next' button,\nEnter the password.A new link appear on screen, now click on new SSO link.SSO id will appear on screen, now create the\npassword.Enter Mobile number, click on registration.Step-5: Complete the registration process.ApplyStep-1: Applicant have to visit\nthe official portal. Step-2: After login, dashboard will open.Step-3: Click on \" RAJ-KISAN â€​ option. Step-4: In \"Citizen\", click on\n\"Application Entry Request\".Step-5: Enter the \"Bhamashah ID\" or \"Janaadhaar ID\" and search. Step-6: Select the person name and\nscheme name. Step-7: Complete the Aadhaar Authentication and click on Get details. Step-8: Provide the required details. - Pensioner\nDetails. - Bank Details. - Disability Details. - Verification Details. - Upload Documents.Step-9: Submit.",
+    "metadata": {
+      "scheme_name": "Anti-Bird Net Scheme",
+      "abbreviation": null,
+      "state": "Rajasthan",
+      "ministry": null,
+      "department": "Agriculture Department",
+      "scheme_type": "Subsidy",
+      "sponsorship": null,
+      "beneficiary_category": [
+        "Farmers"
+      ],
+      "application_mode": "Online",
+      "official_url": "https://sso.rajasthan.gov.in/signin",
+      "source_file": "abn.txt",
+      "section": "General",
+      "chunk_index": 2,
+      "chunk_method": "recursive",
+      "token_count": 400
+    }
+  },
+  {
+    "chunk_id": "abn.txt_recursive_3",
+    "text": "Aadhar\nCard / Janadhar CardCopy of Jamabandi (not more than six months old)Quotation from approved firmFrequently Asked QuestionsWhat\nis the objective of the scheme?To protect horticultural crops from damage caused by birds.May Other State persons also apply for this\nscheme?No, this scheme is only for Rajasthan.Who Can Get The Benefits Of The Scheme?Farmers get benefits from the scheme.How\nmuch subsidy give in this scheme?50 percent subsidy is payable for a maximum area of 5000 square meters.Is there any Requirement\nownership of cultivable land?Yes, The applicant must have ownership of cultivable land.What is Janadhar card?Jan Aadhaar is \"one\nnumber, one card, one identity\" scheme, Its main objective is to prepare a. database of demographic and socio-economic information of\nthe resident families of the state and through the Jan Aadhaar card, the identity of the family and its members.How do a applicant know\nif a field in the application form is mandatory?A distinctive sign (\"*â€​ symbol, \"mandatoryâ€​ mention, etc.)How can i apply\nonline?One can apply by visiting the e-Mitra centre. https://sso.rajasthan.gov.in/ What documents are required?Aadhar Card / Jan\nAadhar Card, copy of Jamabandi (not older than six months), quotation from an approved firm.Is there any educational qualification\nrequired for the scheme?No, there is no educational qualification required.\n\nGuidelinesRegistrationLoginOkWas\nthis helpful?    .  .Ok   .  .OkIt seems you have already initiated\nyour application earlier.  Cancel  RajasthanAnti Bird NetAgricultureAnti Bird\nNetFarmerFarmingDetailsBenefitsEligibilityApplication ProcessDocuments RequiredFrequently Asked QuestionsThe Anti-Bird Net\nScheme, an initiative by the Agriculture Department of the Rajasthan government, promotes protected cultivation practices among\nfarmers by providing subsidies for installing low-cost plastic tunnels. The subsidy amount may be capped for each farmer, depending on\nthe scheme's provisions and available funds.Important pointsThe work can be started only after the administrative approval/work order is\nissued by the Horticulture Department.After establishment, verification can be done by the committee formed.The grant amount can be\npaid directly into the farmer's bank account or to the producing firm based on the written consent of the farmer.Ok",
+    "metadata": {
+      "scheme_name": "Anti-Bird Net Scheme",
+      "abbreviation": null,
+      "state": "Rajasthan",
+      "ministry": null,
+      "department": "Agriculture Department",
+      "scheme_type": "Subsidy",
+      "sponsorship": null,
+      "beneficiary_category": [
+        "Farmers"
+      ],
+      "application_mode": "Online",
+      "official_url": "https://sso.rajasthan.gov.in/signin",
+      "source_file": "abn.txt",
+      "section": "General",
+      "chunk_index": 3,
+      "chunk_method": "recursive",
+      "token_count": 496
+    }
+  }
+]

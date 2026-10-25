@@ -1,0 +1,19 @@
+{
+  "scheme_name": "Atal Awasiya Vidyala Yojana",
+  "abbreviation": null,
+  "state": "Uttar Pradesh",
+  "ministry": null,
+  "department": "Labor Department",
+  "scheme_type": "Free Education",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Children of construction workers employed in the informal sector",
+    "Children destitute during the Corona period",
+    "Children for the Chief Minister Child Service Scheme (General)",
+    "Orphan children",
+    "Offspring of duly registered construction workers"
+  ],
+  "application_mode": "Offline",
+  "official_url": null,
+  "source_file": "aavy.txt"
+}

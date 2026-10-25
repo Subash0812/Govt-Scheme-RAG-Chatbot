@@ -1,0 +1,16 @@
+{
+  "scheme_name": "Ashraya Adhar Scheme",
+  "abbreviation": null,
+  "state": "Goa",
+  "ministry": null,
+  "department": "Department of Tribal Welfare",
+  "scheme_type": "Loan",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "members of Scheduled Tribes",
+    "Scheduled Tribe Community"
+  ],
+  "application_mode": "Offline",
+  "official_url": null,
+  "source_file": "aas.txt"
+}

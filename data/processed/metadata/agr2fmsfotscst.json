@@ -1,0 +1,18 @@
+{
+  "scheme_name": "AGR 2 (Farm Mechanization) Scheme Of Farmers Other Than SC/ST",
+  "abbreviation": null,
+  "state": "Gujarat",
+  "ministry": null,
+  "department": "Department of Agriculture, Farmers Welfare & Co-operation",
+  "scheme_type": "Financial Assistance",
+  "sponsorship": "100% State Sponsored",
+  "beneficiary_category": [
+    "Farmers Other Than SC/ST",
+    "Small Farmers",
+    "Marginal Farmers",
+    "Women Farmers"
+  ],
+  "application_mode": "Online",
+  "official_url": "https://ikhedut.gujarat.gov.in/iKhedutPublicScheme/Public/frm_Public_SchemeDetails.aspx",
+  "source_file": "agr2fmsfotscst.txt"
+}

@@ -1,0 +1,22 @@
+{
+  "scheme_name": "25% Capital Investment Subsidy Scheme",
+  "abbreviation": null,
+  "state": "Lakshadweep",
+  "ministry": null,
+  "department": "Department of Industries",
+  "scheme_type": "Subsidy",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Local entrepreneurs",
+    "Micro and Small Enterprises",
+    "Unemployed youth",
+    "Women",
+    "Ex-servicemen",
+    "Physically handicapped",
+    "Institutions registered under the Societies Registration Act 1960",
+    "Self-Help Groups"
+  ],
+  "application_mode": "Offline",
+  "official_url": null,
+  "source_file": "25-ciss.txt"
+}

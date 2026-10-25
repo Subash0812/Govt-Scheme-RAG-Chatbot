@@ -1,0 +1,32 @@
+{
+  "scheme_name": "Access To Knowledge For Technology Development And Dissemination (A2K+) - Studies",
+  "abbreviation": "A2K+",
+  "state": null,
+  "ministry": "Ministry of Science & Technology",
+  "department": "Department of Scientific & Industrial Research",
+  "scheme_type": null,
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Industries",
+    "Research and academic institutions",
+    "In-house R&D units of industry",
+    "Scientific & Industrial Research Organizations (SIROs)",
+    "Consultants",
+    "Industry Associations",
+    "Techno-entrepreneurs",
+    "Government Departments",
+    "Export Promotion Councils",
+    "Chambers of Commerce and Industry",
+    "Technical Consultancy Organizations",
+    "National R&D Institutions and Organizations",
+    "PFRIs registered with DSIR",
+    "Approved Universities and Colleges",
+    "Institutions having a distinct legal entity",
+    "Entrepreneurs",
+    "Research students",
+    "Policymakers"
+  ],
+  "application_mode": "Offline",
+  "official_url": "http://dsir.gov.in/#files/12plan/a2k/a2ks.html",
+  "source_file": "a2ks.txt"
+}

@@ -1,0 +1,146 @@
+[
+  {
+    "chunk_id": "aan.txt_recursive_1",
+    "text": "Assam Arogya Nidhi SchemeAre you sure you want to  ?  AssistanceHospitalTreatmentDetailsThe scheme \"Assam Arogya Nidhi (AAN)â€​ was launched by the Health & Family Welfare\nDepartment, Govt. of Assam to provide financial assistance to BPL families and families having an annual income of less than ₹5.00\nLakhs. The financial assistance is provided for general and specialized treatment of (i) life-threatening diseases, and (ii) of injuries\ncaused by natural and manmade disasters, such as industrial/ farm/ road/ rail accidents, bomb blasts, etc. Life-threatening diseases\ninclude Heart Diseases and Heart Surgery, Cancer, Kidney and Urinary diseases, Orthopedic, Thallassemia, Bone marrow Transplant,\nAIDS, and chronic Mental Illness with Surgical Treatment. Beneficiaries are selected by a Selection Committee that has been notified by\nthe Government of Assam. Under the AAN, the Government of India contributes 50% of the funds sanctioned by the State\nGovernment.Grant of Assistance:\n1. The Chief Minister of Assam may grant permission directly for the maximum benefits available\nunder AAN.2. The Chairperson of the Committee can clear the grant of financial assistance under AAN against eligible cases up to\n₹2.00 Lakh.3. For grant of assistance above ₹2.00 Lakh up to ₹3.00 Lakh, the State Level committee will decide the eligible\ncases.Mode of disbursement: Financial assistance will be disbursed to the beneficiary concerned or reimbursed to the hospital concerned\nthrough bank account transfer only. The advance payment shall only be to the hospital subject to a maximum of ₹3.00\nlakh.",
+    "metadata": {
+      "scheme_name": "Assam Arogya Nidhi Scheme",
+      "abbreviation": "AAN",
+      "state": "Assam",
+      "ministry": null,
+      "department": "Health & Family Welfare Department",
+      "scheme_type": "Financial Assistance",
+      "sponsorship": null,
+      "beneficiary_category": [
+        "BPL families",
+        "families having an annual income of less than ₹5.00 Lakhs"
+      ],
+      "application_mode": "Offline",
+      "official_url": "https://nhm.assam.gov.in/schemes/assam-arogya-nidhi",
+      "source_file": "aan.txt",
+      "section": "General",
+      "chunk_index": 1,
+      "chunk_method": "recursive",
+      "token_count": 366
+    }
+  },
+  {
+    "chunk_id": "aan.txt_recursive_2",
+    "text": "Under this scheme, financial assistance up to a maximum benefit of ₹3.00 Lakh will be provided.Under this scheme, any\nserious disease is to be covered which requires surgery/implants/procedures like Bone Marrow Transplant (BMT) or any other critical\ndisease including serious accident cases.All financial assistance will be admissible for treatment in all Government hospitals including\nMedical Colleges/ Tertiary Health Care facilities, all reputed private hospitals registered under the Clinical Establishment Act and\nempanelled hospitals of Government of Assam, AAA (Atal Amrit Abhiyan) and PMJAY (Pradhan Mantri Jan Aarogya\nYojana).\n\nAll Indian citizens who are ordinarily resident of the State of Assam will be eligible under the scheme.The family\nincome of the applicant should be less than ₹5.00 lakhs per annum.There will be no age limit for coverage under the scheme.No Govt.\nemployee or Govt. pensioners and their family members will be eligible under the scheme.Treatment should be undertaken in any govt.\nhospital including Govt. Medical Colleges and all reputed Pvt. Hospitals registered under Clinical Establishment Act. anywhere in the\nstate or in the country.",
+    "metadata": {
+      "scheme_name": "Assam Arogya Nidhi Scheme",
+      "abbreviation": "AAN",
+      "state": "Assam",
+      "ministry": null,
+      "department": "Health & Family Welfare Department",
+      "scheme_type": "Financial Assistance",
+      "sponsorship": null,
+      "beneficiary_category": [
+        "BPL families",
+        "families having an annual income of less than ₹5.00 Lakhs"
+      ],
+      "application_mode": "Offline",
+      "official_url": "https://nhm.assam.gov.in/schemes/assam-arogya-nidhi",
+      "source_file": "aan.txt",
+      "section": "General",
+      "chunk_index": 2,
+      "chunk_method": "recursive",
+      "token_count": 248
+    }
+  },
+  {
+    "chunk_id": "aan.txt_recursive_3",
+    "text": "OfflineStep 01: The applicant should visit the official website and download the application\nform from the website of National Health Assam: https://nhm.assam.gov.in/schemes/assam-arogya-nidhiStep 02: Application in the\nprescribed format, complete in all respects will be submitted to NHM, Assam, or to the Joint Director of Health Services of the District\nwho will forward the same to NHM, Assam for necessary consideration.Step 03: An Expert Committee comprising specialist doctors of\nGuwahati Medical College verifies the applications and recommends the eligible cases.Step 04: As per the committee's\nrecommendations financial assistance is provided to eligible beneficiaries preferably through Direct Bank Transfer.Note 01: A person\nhaving PMJAY or AAA card will avail of the cashless treatment benefit against admissible diseases under the said schemes first before\nmaking any application for consideration under AAN.Note 02: A person not having PMJAY/ AAA Card or if the disease is not covered\nunder PMJAY/AAA, can submit their application directly.Note 03: AAN assistance is for exceptional cases and not general.Documents\nRequiredPhotograph of the patient (Attested by Doctor)Attested photocopy of Income Certificate by Revenue Circle Officer.Attested\nphotocopy of Identify & Address Proof (Voter ID, ADHAAR CARD, Driving license).Original bills, vouchers, receipts, etc.Copy of the\nmedical documents of treatment to be certified by treating Doctor/Hospital Discharge Summary/Prescription (Attested)Attested\nPhotocopy copy of the first page of the Bank Pass Book.Attested Photocopy of Pradhan Mantri Jana Arogyua Yojana (PMJAY)/Atal\nAmrit Abhiyan (AAA) Card.",
+    "metadata": {
+      "scheme_name": "Assam Arogya Nidhi Scheme",
+      "abbreviation": "AAN",
+      "state": "Assam",
+      "ministry": null,
+      "department": "Health & Family Welfare Department",
+      "scheme_type": "Financial Assistance",
+      "sponsorship": null,
+      "beneficiary_category": [
+        "BPL families",
+        "families having an annual income of less than ₹5.00 Lakhs"
+      ],
+      "application_mode": "Offline",
+      "official_url": "https://nhm.assam.gov.in/schemes/assam-arogya-nidhi",
+      "source_file": "aan.txt",
+      "section": "General",
+      "chunk_index": 3,
+      "chunk_method": "recursive",
+      "token_count": 375
+    }
+  },
+  {
+    "chunk_id": "aan.txt_recursive_4",
+    "text": "What is \"Assam Arogya Nidhi Schemeâ€​?The scheme \"Assam\nArogya Nidhi Schemeâ€​ is a yearly Financial Assistance Scheme provided as reimbursement to members of families whose yearly\nincome is less than ₹5.00 lakhs for treatment of serious diseases including accident cases.How much financial assistance will be\nprovided under the scheme?Under this scheme, financial assistance up to a maximum benefit of ₹3.00 Lakh will be provided.What type\nof diseases are to be covered under the scheme?Under this scheme, any serious disease is to be covered which requires surgery/ implants/\nprocedures like Bone Marrow Transplant (BMT) or any other critical disease including serious accident cases.In which hospital the\nfinancial assistance will be admissible for treatment?All financial assistance will be admissible for treatment in all Government hospitals\nincluding Medical Colleges/ Tertiary Health Care facilities, all reputed private hospitals registered under the Clinical Establishment Act\nand empanelled hospitals of the Government of Assam.Who will select the beneficiary?Beneficiaries are selected by a Selection\nCommittee that has been notified by the Government of Assam.Who are the members of the Selection Committee?The members of the\nSelection Committee are (i) Hon'ble Minister, Health & Family Welfare, Chairperson Assam (ii) Principal Secretary to the Govt. of\nAssam, Member (iii) Health & Family Welfare Deptt. CEO, AAA Society, Member (iv) Mission Director, NHM, Assam, Convenor (v)\nDirector of Health Services, Assam, Member (vi) Director of Medical Education, Assam, Member (vii) Financial Advisor, Health &\nFamily Welfare Department, Member (viii) Principal, GMCH, Bhangaghar, MemberIs it a 100% state sponsored scheme?No, the\ngovernment of India also contributes 50% of the funds sanctioned by the State Government.Who is eligible under the scheme?An\nindividual whose family income is less than ₹5.00 lakhs per annum is eligible under the scheme.Is this scheme only for resident of\nAssam State?Yes, all Indian citizens who are ordinarily residents of the State of Assam will be eligible under the scheme.What is the age",
+    "metadata": {
+      "scheme_name": "Assam Arogya Nidhi Scheme",
+      "abbreviation": "AAN",
+      "state": "Assam",
+      "ministry": null,
+      "department": "Health & Family Welfare Department",
+      "scheme_type": "Financial Assistance",
+      "sponsorship": null,
+      "beneficiary_category": [
+        "BPL families",
+        "families having an annual income of less than ₹5.00 Lakhs"
+      ],
+      "application_mode": "Offline",
+      "official_url": "https://nhm.assam.gov.in/schemes/assam-arogya-nidhi",
+      "source_file": "aan.txt",
+      "section": "General",
+      "chunk_index": 4,
+      "chunk_method": "recursive",
+      "token_count": 472
+    }
+  },
+  {
+    "chunk_id": "aan.txt_recursive_5",
+    "text": "individual whose family income is less than ₹5.00 lakhs per annum is eligible under the scheme.Is this scheme only for resident of\nAssam State?Yes, all Indian citizens who are ordinarily residents of the State of Assam will be eligible under the scheme.What is the age\nlimit to apply for the scheme?There is no age limit for applying under the scheme.Can a government employee or pensioner is eligible\nfor the scheme?No, the Govt. employees or Govt. pensioners and their family members will not be eligible under the scheme.Where can\nI get the application form?The applicant should visit the official website and download the application form from the website of National\nHealth Assam.How can I apply under the scheme?The applicant must complete the application in all respects and submit it to NHM,\nAssam, or to the Joint Director of Health Services of the District who will forward the same to NHM, Assam for necessary\nconsideration.How will the financial assistance be provided to eligible beneficiaries?As per the committee's recommendations,\nfinancial assistance is provided to eligible beneficiaries preferably through Direct Bank Transfer.Sources And\nReferencesGuidelineWebsiteOk     .\nlater.Ok .  Cancel Check",
+    "metadata": {
+      "scheme_name": "Assam Arogya Nidhi Scheme",
+      "abbreviation": "AAN",
+      "state": "Assam",
+      "ministry": null,
+      "department": "Health & Family Welfare Department",
+      "scheme_type": "Financial Assistance",
+      "sponsorship": null,
+      "beneficiary_category": [
+        "BPL families",
+        "families having an annual income of less than ₹5.00 Lakhs"
+      ],
+      "application_mode": "Offline",
+      "official_url": "https://nhm.assam.gov.in/schemes/assam-arogya-nidhi",
+      "source_file": "aan.txt",
+      "section": "General",
+      "chunk_index": 5,
+      "chunk_method": "recursive",
+      "token_count": 244
+    }
+  },
+  {
+    "chunk_id": "aan.txt_recursive_6",
+    "text": "Section: Eligibility\n\nAssamAssam Arogya Nidhi SchemeAccidental CaseDiseasesFinancial\nAssistanceHospitalTreatmentDetailsBenefitsEligibilityApplication ProcessDocuments RequiredFrequently Asked QuestionsThe scheme\n\"Assam Arogya Nidhi (AAN)â€​ was launched by the Health & Family Welfare Department, Govt. of Assam to provide financial\nassistance to BPL families and families having an annual income of less than ₹5.00 Lakhs. The financial assistance is provided for\ngeneral and specialized treatment of (i) life-threatening diseases, and (ii) of injuries caused by natural and manmade disasters, such as\nindustrial/ farm/ road/ rail accidents, bomb blasts, etc. Life-threatening diseases include Heart Diseases and Heart Surgery, Cancer,\n\nKidney and Urinary diseases, Orthopedic, Thallassemia, Bone marrow Transplant, AIDS, and chronic Mental Illness with Surgical\nTreatment. Beneficiaries are selected by a Selection Committee that has been notified by the Government of Assam. Under the AAN, the\nGovernment of India contributes 50% of the funds sanctioned by the State Government.Grant of Assistance:\n1. The Chief Minister of\nAssam may grant permission directly for the maximum benefits available under AAN.2. The Chairperson of the Committee can clear the\ngrant of financial assistance under AAN against eligible cases up to ₹2.00 Lakh.3. For grant of assistance above ₹2.00 Lakh up to\n₹3.00 Lakh, the State Level committee will decide the eligible cases.Mode of disbursement: Financial assistance will be disbursed to\nthe beneficiary concerned or reimbursed to the hospital concerned through bank account transfer only. The advance payment shall only\nbe to the hospital subject to a maximum of ₹3.00 lakh.Ok   No new",
+    "metadata": {
+      "scheme_name": "Assam Arogya Nidhi Scheme",
+      "abbreviation": "AAN",
+      "state": "Assam",
+      "ministry": null,
+      "department": "Health & Family Welfare Department",
+      "scheme_type": "Financial Assistance",
+      "sponsorship": null,
+      "beneficiary_category": [
+        "BPL families",
+        "families having an annual income of less than ₹5.00 Lakhs"
+      ],
+      "application_mode": "Offline",
+      "official_url": "https://nhm.assam.gov.in/schemes/assam-arogya-nidhi",
+      "source_file": "aan.txt",
+      "section": "Eligibility",
+      "chunk_index": 6,
+      "chunk_method": "recursive",
+      "token_count": 386
+    }
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "scheme_name": "AGR 3 (Farm Mechanization) Scheme For ST Farmers",
+  "abbreviation": null,
+  "state": "Gujarat",
+  "ministry": null,
+  "department": "Department of Agriculture, Farmers Welfare & Co-operation",
+  "scheme_type": "Financial Assistance",
+  "sponsorship": "100% State Sponsored",
+  "beneficiary_category": [
+    "ST Farmers",
+    "Adivasi farmers",
+    "Scheduled Tribe",
+    "tribal cultivator"
+  ],
+  "application_mode": "Online",
+  "official_url": "https://ikhedut.gujarat.gov.in/iKhedutPublicScheme/Public/frm_Public_SchemeDetails.aspx",
+  "source_file": "agr3fmsstf.txt"
+}

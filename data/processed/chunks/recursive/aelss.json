@@ -1,0 +1,74 @@
+[
+  {
+    "chunk_id": "aelss.txt_recursive_1",
+    "text": "Abhinandan Education Loan Subsidy SchemeAre you sure you want to  ?  SchemeDetailsThe objective of this scheme is to provide a loan subsidy of up to Rs 50,000 on education loans to students pursuing\nhigher education from good institutions. The Abhinandan Education Loan Subsidy Scheme has been started with the Housing Scheme.\nUnder this scheme, the Government of Assam will provide a one-time subsidy on loans to all students pursuing higher education on\neducation loans. Under the Abhinandan Scheme all major banks, all commercial banks such as Federal Bank and HDFC are\nincluded.In this scheme, the state government will provide subsidy to the family of those students who has taken an education loan of\nmore than Rs 1 lakh. Students getting an education on an education loan can subscribe to this scheme online or offlineBenefitsBenefitsA\nsubsidy of Rs 50,000 will be provided to students by the Government of Assam on education loans up to Rs 1 lakh.In this scheme, all the\napplicant students can apply for the subsidy by paying 25% of their loans.Under this scheme, the subsidy can be obtained only on loans\ntaken from commercial banks like Federal Bank and HDFC and regional rural banks like Assam Rural Regional Bank.In this scheme, all\nstudents have to get financial help by encouraging students on education loans.",
+    "metadata": {
+      "scheme_name": "Abhinandan Education Loan Subsidy Scheme",
+      "abbreviation": null,
+      "state": "Assam",
+      "ministry": null,
+      "department": null,
+      "scheme_type": "Subsidy",
+      "sponsorship": null,
+      "beneficiary_category": [
+        "Students",
+        "Students pursuing higher education"
+      ],
+      "application_mode": "Online and Offline",
+      "official_url": null,
+      "source_file": "aelss.txt",
+      "section": "General",
+      "chunk_index": 1,
+      "chunk_method": "recursive",
+      "token_count": 276
+    }
+  },
+  {
+    "chunk_id": "aelss.txt_recursive_2",
+    "text": "Section: Eligibility\n\nstudent to be a permanent resident of the state of Assam.The student must have taken a loan from a commercial or rural bank, otherwise,\nhe cannot avail of the benefit of the scheme.The bank has been recognized by the Reserve Bank of India.The benefit of this scheme can\nbe availed only as a subsidy on education loans.It is mandatory for the student's parents to have an education loan of more than Rs 1\nlakh.",
+    "metadata": {
+      "scheme_name": "Abhinandan Education Loan Subsidy Scheme",
+      "abbreviation": null,
+      "state": "Assam",
+      "ministry": null,
+      "department": null,
+      "scheme_type": "Subsidy",
+      "sponsorship": null,
+      "beneficiary_category": [
+        "Students",
+        "Students pursuing higher education"
+      ],
+      "application_mode": "Online and Offline",
+      "official_url": null,
+      "source_file": "aelss.txt",
+      "section": "Eligibility",
+      "chunk_index": 2,
+      "chunk_method": "recursive",
+      "token_count": 93
+    }
+  },
+  {
+    "chunk_id": "aelss.txt_recursive_3",
+    "text": "Section: Exclusions\n\nGovernment employees are not allowed to apply to the scheme.The student obtaining benefits under this\nscheme shall not be allowed to avail of benefits under any other scheme for this purpose.Beneficiaries who already benefited under Bidya\nLakshmi Scheme are not eligible for application in this scheme.\n\nOnlineApplication process Visit the official\nwebsite.With the respect to the \"Abhinandhan Education Loan Subsidy\", click on apply option. The Assam Abhinandhan Scheme\nOnline Application Form will appear.Now provide the required details. Upload the required documents and submitDocuments\nRequiredList of the required documentStudent's Aadhaar CardParent Identification DocumentsBank loan documentsResidence\ncertificateFrequently Asked QuestionsWhat is the maximum subsidy one can avail? A subsidy of Rs 50,000 will be provided to students\nby the Government of Assam on education loans up to Rs 1 lakhWhat is the percentage one has to pay for applying for scheme?25% of\nthe loanIs it only for the resident of the state? The applicant must be a permanent and legal resident of Assam stateWhat is the amount of\nloan should beThe loan must be of rupees 100000 or more.Bidya Lakshmi Scheme are eligibleBeneficiaries who already benefited under\nBidya Lakshmi Scheme are not eligible for application in this scheme.\n\nGuidelinesOk News and\nUpdates   .  .Ok   .  .OkIt seems you have already initiated your application\nearlier.  Cancel  AssamAbhinandan Education Loan Subsidy\nRequiredFrequently Asked QuestionsThe objective of this scheme is to provide a loan subsidy of up to Rs 50,000 on education loans to\nstudents pursuing higher education from good institutions. The Abhinandan Education Loan Subsidy Scheme has been started with the\nHousing Scheme. Under this scheme, the Government of Assam will provide a one-time subsidy on loans to all students pursuing higher\neducation on education loans. Under the Abhinandan Scheme all major banks, all commercial banks such as Federal Bank and HDFC are\nincluded.In this scheme, the state government will provide subsidy to the family of those students who has taken an education loan of\nmore than Rs 1 lakh. Students getting an education on an education loan can subscribe to this scheme online or offlineOkWas this\nhelpful?",
+    "metadata": {
+      "scheme_name": "Abhinandan Education Loan Subsidy Scheme",
+      "abbreviation": null,
+      "state": "Assam",
+      "ministry": null,
+      "department": null,
+      "scheme_type": "Subsidy",
+      "sponsorship": null,
+      "beneficiary_category": [
+        "Students",
+        "Students pursuing higher education"
+      ],
+      "application_mode": "Online and Offline",
+      "official_url": null,
+      "source_file": "aelss.txt",
+      "section": "Exclusions",
+      "chunk_index": 3,
+      "chunk_method": "recursive",
+      "token_count": 483
+    }
+  }
+]

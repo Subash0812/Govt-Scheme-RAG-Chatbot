@@ -1,0 +1,15 @@
+{
+  "scheme_name": "Aponar Apon Ghar",
+  "abbreviation": null,
+  "state": "Assam",
+  "ministry": null,
+  "department": "Finance Department",
+  "scheme_type": "Subsidy",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Permanent residents of Assam"
+  ],
+  "application_mode": "Online",
+  "official_url": "https://finance.assam.gov.in/sites/default/files/INTEREST%20SUBVENTION%20SCHEME%20FOR%20HOUSING%20LOAN%20FOR%20REGULAR%20STATE%20GOVERNMENT%20EMPLOYEES%20UNDER",
+  "source_file": "aag.txt"
+}

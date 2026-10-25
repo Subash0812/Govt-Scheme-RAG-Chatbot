@@ -1,0 +1,15 @@
+{
+  "scheme_name": "Accidental Death Benefit Scheme",
+  "abbreviation": null,
+  "state": "Puducherry",
+  "ministry": null,
+  "department": "Labour Department",
+  "scheme_type": "Financial Assistance",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Nominees/dependents of the deceased Construction Worker"
+  ],
+  "application_mode": "Offline",
+  "official_url": "https://labour.py.gov.in/sites/default/files/citizens-charter-2020.pdf",
+  "source_file": "adbs-pbaocwwb.txt"
+}

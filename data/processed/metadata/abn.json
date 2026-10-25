@@ -1,0 +1,15 @@
+{
+  "scheme_name": "Anti-Bird Net Scheme",
+  "abbreviation": null,
+  "state": "Rajasthan",
+  "ministry": null,
+  "department": "Agriculture Department",
+  "scheme_type": "Subsidy",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Farmers"
+  ],
+  "application_mode": "Online",
+  "official_url": "https://sso.rajasthan.gov.in/signin",
+  "source_file": "abn.txt"
+}

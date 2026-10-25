@@ -1,0 +1,16 @@
+{
+  "scheme_name": "Assam Arogya Nidhi Scheme",
+  "abbreviation": "AAN",
+  "state": "Assam",
+  "ministry": null,
+  "department": "Health & Family Welfare Department",
+  "scheme_type": "Financial Assistance",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "BPL families",
+    "families having an annual income of less than ₹5.00 Lakhs"
+  ],
+  "application_mode": "Offline",
+  "official_url": "https://nhm.assam.gov.in/schemes/assam-arogya-nidhi",
+  "source_file": "aan.txt"
+}

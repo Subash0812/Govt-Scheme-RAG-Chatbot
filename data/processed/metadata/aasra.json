@@ -1,0 +1,18 @@
+{
+  "scheme_name": "AASRA Scheme",
+  "abbreviation": null,
+  "state": "Jammu and Kashmir",
+  "ministry": null,
+  "department": "Department of Social Welfare",
+  "scheme_type": "Insurance",
+  "sponsorship": "100% State Sponsored",
+  "beneficiary_category": [
+    "Widows",
+    "Destitute",
+    "Below Poverty Line (BPL) families",
+    "Breadwinners of families whose annual income is less than ₹75000/-"
+  ],
+  "application_mode": "Online",
+  "official_url": "https://www.jk.gov.in/jkeservices/home",
+  "source_file": "aasra.txt"
+}

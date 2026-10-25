@@ -1,0 +1,18 @@
+{
+  "scheme_name": "Annal Ambedkar Business Champions Scheme",
+  "abbreviation": "AABCS",
+  "state": "Tamil Nadu",
+  "ministry": null,
+  "department": "Department of Micro, Small and Medium Enterprises",
+  "scheme_type": "Subsidy",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "persons belonging to SC/ST communities",
+    "SC/ST entrepreneurs",
+    "new entrepreneurs",
+    "existing entrepreneurs"
+  ],
+  "application_mode": "Online",
+  "official_url": "https://msmeonline.tn.gov.in/aabcs/index.php",
+  "source_file": "aabcs.txt"
+}

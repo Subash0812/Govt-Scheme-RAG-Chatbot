@@ -1,0 +1,19 @@
+{
+  "scheme_name": "Agri-Clinics And Agri-Business Centres Scheme",
+  "abbreviation": "AC&ABC",
+  "state": null,
+  "ministry": "Ministry Of Agriculture and Farmers Welfare",
+  "department": "Department of Agriculture & Cooperation",
+  "scheme_type": null,
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Farmers",
+    "Unemployed agricultural graduates",
+    "Agricultural diploma holders",
+    "Intermediate in agriculture",
+    "Biological science graduates with PG in agri-related courses"
+  ],
+  "application_mode": "Online",
+  "official_url": null,
+  "source_file": "acandabc.txt"
+}

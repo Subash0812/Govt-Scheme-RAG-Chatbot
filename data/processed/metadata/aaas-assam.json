@@ -1,0 +1,16 @@
+{
+  "scheme_name": "Atal Amrit Abhiyan Scheme",
+  "abbreviation": "AAA",
+  "state": "Assam",
+  "ministry": null,
+  "department": null,
+  "scheme_type": "Health Assurance",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Below Poverty Line (BPL) population",
+    "Low-Income households"
+  ],
+  "application_mode": "Offline",
+  "official_url": "https://nhm.assam.gov.in/schemes/detail/atal-amrit-abhiyan-0",
+  "source_file": "aaas-assam.txt"
+}

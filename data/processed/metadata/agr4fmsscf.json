@@ -1,0 +1,16 @@
+{
+  "scheme_name": "AGR 4 (Farm Mechanization) Scheme For SC Farmers",
+  "abbreviation": null,
+  "state": "Gujarat",
+  "ministry": null,
+  "department": "Department of Agriculture, Farmers Welfare & Co-operation",
+  "scheme_type": "Financial Assistance",
+  "sponsorship": "100% State Sponsored",
+  "beneficiary_category": [
+    "Farmers",
+    "Scheduled Caste"
+  ],
+  "application_mode": "Online",
+  "official_url": "https://ikhedut.gujarat.gov.in/iKhedutPublicScheme/Public/frm_Public_SchemeDetails.aspx",
+  "source_file": "agr4fmsscf.txt"
+}

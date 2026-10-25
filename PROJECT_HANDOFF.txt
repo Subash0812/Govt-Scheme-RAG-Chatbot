@@ -1,0 +1,508 @@
+================================================================================
+PROJECT HANDOFF — SchemeSathi
+Written for: an AI coding agent continuing this work on a GCP VM
+Date: 2026-10-25
+Read this file completely before changing anything.
+================================================================================
+
+
+--------------------------------------------------------------------------------
+1. WHAT THIS PROJECT IS
+--------------------------------------------------------------------------------
+
+SchemeSathi is an English-language RAG chatbot that helps people explore Indian
+government welfare schemes. It is a portfolio/resume project, so code clarity,
+visible evaluation numbers, and honest citations matter as much as features.
+
+The corpus is 46 real scheme documents scraped from the MyScheme portal
+(myscheme.gov.in). Each document describes one scheme: what it is, who is
+eligible, what the benefits are, how to apply, and what documents are needed.
+
+The hard problem this project is solving is RETRIEVAL, not generation. Users ask
+two very different kinds of question:
+
+  (a) NAMED   — "What documents do I need for the Annal Ambedkar Business
+                Champions Scheme?"  (one specific scheme is named)
+  (b) BROAD   — "I am a farmer, what financial help can I get?"
+                (no scheme named; the system must DISCOVER which schemes apply)
+
+Flat vector search over chunks handles (a) well and (b) badly, because a broad
+question matches whichever chunk happens to use similar words, not the set of
+schemes that actually serve that person. Most of the recent work has been about
+fixing (b).
+
+Answer generation is deliberately conservative: answers must come only from
+retrieved context, must cite official source URLs, and must never claim a user
+is definitely eligible. There is an offline extractive fallback when no
+GEMINI_API_KEY is present.
+
+
+--------------------------------------------------------------------------------
+2. CURRENT STATE — READ THIS FIRST
+--------------------------------------------------------------------------------
+
+WORKING:
+  - Full offline data pipeline: raw scrape -> cleaned text -> LLM metadata ->
+    chunks -> FAISS indices. All 46 schemes are processed and indexed.
+  - Two FAISS indices built and current (274 chunk vectors, 46 scheme cards).
+  - SchemeRetrievalRouter: a two-stage retriever that handles both named and
+    broad questions. Implemented, unit tested, and benchmarked.
+  - Four evaluation harnesses with labeled gold sets, producing JSON + Markdown
+    reports.
+  - 7/7 unit tests pass.
+
+DELIBERATELY PARKED — DO NOT "FIX" THIS FIRST:
+  The Streamlit app is NOT finalized and is intentionally out of scope for now.
+  Current focus is development of the RAG/retrieval system itself. Two facts so
+  you do not mistake this for an urgent bug:
+
+  * app.py does not run. It defines DATA_FILE = data/schemes.json at app.py:13
+    and loads it at app.py:20, and that file no longer exists, so Streamlit
+    raises FileNotFoundError on launch.
+
+  * app.py + rag.py are the OLD architecture. rag.py does keyword term-frequency
+    scoring over a hand-curated JSON list of Central schemes. It does NOT use
+    the FAISS index, the scheme cards, or SchemeRetrievalRouter at all.
+
+  The app will be rebuilt on top of SchemeRetrievalRouter once the retrieval
+  layer has settled. Rewiring it now would just mean rewiring it twice.
+  Treat it as last priority — see section 9, item P7.
+
+  Consequence to keep in mind: none of the retrieval work in this document
+  reaches an end user yet. Everything is validated through the evaluation
+  harnesses in src/embeddings/, not through a UI. That is the intended workflow
+  for now — improve retrieval, measure it, and only then build the interface.
+
+NOT YET DONE: no deployment of any kind. This VM is a development box, not
+production. There is no CI, no Dockerfile, no hosting.
+
+
+--------------------------------------------------------------------------------
+3. REPO MAP
+--------------------------------------------------------------------------------
+
+  app.py                     Streamlit UI. BROKEN (see section 2).
+  rag.py                     Old keyword retriever + Gemini answer layer.
+                             SchemeRetriever.retrieve() at rag.py:43.
+  requirements.txt           All runtime deps.
+  .env                       GEMINI_API_KEY. Gitignored. NOT in the repo —
+                             must be copied to the VM separately.
+
+  src/ingestion/             Stage 1-2: PDF/text scraping and cleaning.
+    processpdfs.py             raw PDF -> text
+    processpdfsv3.py           current version of the above
+    cleaner.py                 earlier cleaner
+    cleanerv3.py               CURRENT cleaner (produces cleaned_v3)
+    cleaner_executer.py        runner
+
+  src/metadata/              Stage 3: LLM metadata extraction.
+    extract_metadata.py        Gemini call, retries, resume-on-rerun
+    metadata_schema.py         pydantic SchemeMetadata model
+
+  src/chunking/              Stage 4: text -> chunks.
+    preprocessor.py            de-noises scraped MyScheme HTML text
+    common.py                  section detection, token counting, chunk records
+    recursive_chunker.py       PRIMARY chunker (this is what gets indexed)
+    fixed_chunker.py           baseline chunker, kept for comparison
+    run_chunking.py            entry point; writes both fixed/ and recursive/
+
+  src/embeddings/            Stage 5-6: indexing, retrieval, evaluation.
+    build_faiss_index.py         builds the CHUNK index
+    build_scheme_card_index.py   builds the SCHEME CARD index
+    retrieval_router.py          SchemeRetrievalRouter (the main retriever)
+    scheme_matching.py           exact/fuzzy scheme-name resolution
+    evaluate_retrieval.py        100-case single-scheme suite
+    evaluate_broad_retrieval.py  8-case broad multi-scheme suite
+    evaluate_intent_retrieval.py 10-case named-intent suite
+    evaluate_router_retrieval.py combined router-vs-baseline harness (NEWEST)
+
+  tests/
+    test_retrieval_router.py   2 tests
+    test_scheme_matching.py    5 tests
+
+  notebooks/retrieval_demo.ipynb   manual chunk inspection
+  extract_clean.ipynb              older exploration notebook
+
+  data/
+    raw/                 100 originally scraped files
+    raw_filtered/        46 after dedupe/filtering — the real corpus
+    processed/
+      cleaned_v1/        100 files, first cleaning pass (superseded)
+      cleaned_v2/        100 files, second pass (superseded)
+      cleaned_v3/        46 files — CURRENT, this is what everything reads
+      metadata/          46 JSON files, one per scheme
+      chunks/
+        recursive/       46 JSON files — indexed by build_faiss_index
+        fixed/           46 JSON files — baseline, not indexed
+    models/              HuggingFace cache for BAAI/bge-base-en-v1.5 (~419 MB).
+                         GITIGNORED. Re-downloadable; see section 5.
+    vector_store/bge_base_en_v1_5/
+      index.faiss              274 chunk vectors, 768-dim, IndexFlatIP
+      chunks.json              the 274 chunk payloads
+      manifest.json            chunk index reproducibility manifest
+      scheme_index.faiss       46 scheme-card vectors, 768-dim
+      scheme_cards.json        the 46 cards incl. card_text + summary
+      scheme_manifest.json     card index manifest incl. cards_sha256
+      *.metadata_only.bak.*    rollback snapshot of the pre-enrichment cards
+                         GITIGNORED. Must be copied to the VM or rebuilt.
+    evaluation/
+      broad_retrieval_cases.json    8 labeled broad questions
+      intent_retrieval_cases.json  10 labeled named-intent questions
+      retrieval_cases.json        100 labeled single-scheme questions
+      results/                    generated reports (GITIGNORED)
+        router_retrieval_report.md    <- START HERE for retrieval status
+        router_retrieval_report.json
+        broad_retrieval_report.json
+        intent_retrieval_report.json
+        retrieval_report.json
+
+
+--------------------------------------------------------------------------------
+4. THE PIPELINE, IN ORDER
+--------------------------------------------------------------------------------
+
+Every stage is idempotent and reads/writes plain files. To rebuild everything
+from scratch on a new machine, run these in order from the repo root:
+
+  Stage 1-2  Ingestion + cleaning
+             (already done; raw_filtered/ and cleaned_v3/ are committed.
+              Only rerun if you re-scrape.)
+             python -m src.ingestion.processpdfsv3
+             python -m src.ingestion.cleanerv3
+
+  Stage 3    Metadata extraction — CALLS THE GEMINI API, costs quota, and is
+             slow by design (4 s delay between requests, up to 6 retries with
+             exponential backoff). It skips any scheme whose JSON already
+             exists, so it is safe to rerun and resume.
+             Requires GEMINI_API_KEY in .env.
+             python -m src.metadata.extract_metadata
+             NOTE: MODEL_NAME is hardcoded as "gemini-3.6-flash" in that file.
+             Verify this is a real, available model before running — if the
+             name is wrong every request will fail. rag.py separately defaults
+             to "gemini-2.5-flash" via the GEMINI_MODEL env var.
+
+  Stage 4    Chunking — local, fast, no API.
+             python -m src.chunking.run_chunking
+             Reads data/processed/cleaned_v3/*.txt + data/processed/metadata/*.json
+             Writes data/processed/chunks/{recursive,fixed}/*.json
+
+  Stage 5    Chunk index — downloads BAAI/bge-base-en-v1.5 on first run.
+             python -m src.embeddings.build_faiss_index
+             Reads data/processed/chunks/recursive/*.json
+             Writes data/vector_store/bge_base_en_v1_5/{index.faiss,chunks.json,manifest.json}
+
+  Stage 6    Scheme-card index — must run AFTER stage 5.
+             python -m src.embeddings.build_scheme_card_index
+             Writes scheme_index.faiss, scheme_cards.json, scheme_manifest.json
+
+  Stage 7    Evaluation — read-only, writes reports.
+             python -m src.embeddings.evaluate_router_retrieval
+
+  Stage 8    The app (currently broken).
+             streamlit run app.py
+
+
+--------------------------------------------------------------------------------
+5. ENVIRONMENT SETUP ON THIS VM
+--------------------------------------------------------------------------------
+
+Python 3.12 was used for development. requirements.txt is complete.
+
+  python3 -m venv .venv
+  source .venv/bin/activate
+  pip install -r requirements.txt
+
+  # Secret — NOT in git. Copy it from the old machine or recreate it:
+  #   GEMINI_API_KEY=<your key>
+  #   GEMINI_MODEL=gemini-2.5-flash        (optional; rag.py default)
+  printf 'GEMINI_API_KEY=...\n' > .env
+
+The embedding model is gitignored (~419 MB). Two options:
+
+  (a) Let stage 5 download it. build_faiss_index.py calls SentenceTransformer
+      WITHOUT local_files_only, so the first run fetches BAAI/bge-base-en-v1.5
+      from HuggingFace into data/models/. Needs outbound internet.
+  (b) Copy data/models/ from the old machine.
+
+IMPORTANT: every OTHER module (retrieval_router, build_scheme_card_index, all
+evaluate_* scripts) loads the model with local_files_only=True and
+cache_folder=data/models. So the model MUST already be present before you run
+anything other than build_faiss_index. If you see a "cannot find model /
+offline mode" error, run stage 5 once, or copy data/models/.
+
+data/vector_store/ is also gitignored. Either copy it from the old machine or
+rerun stages 5 and 6 (a few minutes). If you rerun stage 6, cards_sha256 in
+scheme_manifest.json should come out as
+e2785e6235d82343ba6398ae3f45c630301e67fce4ccd9d1ac7282d7d7549c74 —
+if it differs, the card text changed and every retrieval number in
+router_retrieval_report.md is stale. Rerun stage 7.
+
+
+--------------------------------------------------------------------------------
+6. HOW TO VERIFY NOTHING IS BROKEN
+--------------------------------------------------------------------------------
+
+  # Unit tests. NOTE: pytest is NOT installed and NOT in requirements.txt.
+  # The tests are unittest-style, so use:
+  python -m unittest discover -s tests -v
+  # Expected: Ran 7 tests ... OK
+
+  # Retrieval evaluation (takes a few minutes; loads the model, encodes 118
+  # questions, measures latency):
+  python -m src.embeddings.evaluate_router_retrieval
+  # Then read data/evaluation/results/router_retrieval_report.md
+
+  # Quick smoke test of the router:
+  python -c "from src.embeddings.retrieval_router import SchemeRetrievalRouter as R; \
+  r=R.from_local_store(); print(r.retrieve('Which schemes help farmers financially?').schemes)"
+
+
+--------------------------------------------------------------------------------
+7. RETRIEVAL ARCHITECTURE
+--------------------------------------------------------------------------------
+
+Model: BAAI/bge-base-en-v1.5 (SentenceTransformer), 768 dimensions, run on CPU.
+Vectors are L2-normalized and stored in faiss.IndexFlatIP, so inner product
+equals cosine similarity. Queries are encoded with the BGE prefix
+"Represent this sentence for searching relevant passages: " (retrieval_router.QUERY_PREFIX).
+Documents/cards are encoded WITHOUT the prefix. This asymmetry is required by
+BGE — do not "fix" it.
+
+TWO INDICES:
+  index.faiss        274 chunk vectors. Answers questions ABOUT a known scheme.
+  scheme_index.faiss  46 card vectors. DISCOVERS which schemes fit a broad need.
+
+SCHEME CARDS (src/embeddings/build_scheme_card_index.py)
+  One card per scheme. card_text is what gets embedded:
+    Scheme: <name>
+    Abbreviation: / State or territory: / Ministry: / Department: /
+    Scheme type: / Sponsorship: / Application mode:
+    Beneficiary categories: <; separated>
+    Summary: <up to 4 sentences, max 1400 chars>
+  The Summary line is the recent fix. It is built by build_summary() from the
+  scheme's "General"-section chunks, falling back to "Details" when General
+  holds only scraped UI noise. clean_chunk_text() strips MyScheme navigation
+  residue; sentences under 35 chars, UI-noise sentences, and duplicates are
+  dropped. Config constants: SUMMARY_SECTION, SUMMARY_FALLBACK_SECTION,
+  SUMMARY_SENTENCES=4, SUMMARY_MAX_CHARS=1400.
+  Max card is 420 tokens — deliberately under BGE's 512-token window. Do not
+  raise SUMMARY_MAX_CHARS much without checking token counts, or cards get
+  silently truncated by the model and retrieval degrades.
+  Metadata-only cards scored badly on broad queries; see section 8.
+
+ROUTER (src/embeddings/retrieval_router.py, class SchemeRetrievalRouter)
+  SchemeRetrievalRouter.from_local_store() is the constructor.
+  retrieve(question, scheme_limit=3, chunks_per_scheme=3) -> RetrievalResult
+
+  Route 1 "exact_scheme":
+    scheme_matching.match_scheme() resolves a scheme name or abbreviation in the
+    question (exact, else fuzzy at FUZZY_THRESHOLD=0.86 with an
+    AMBIGUITY_MARGIN=0.04 guard). On a hit, chunk ranking is restricted to that
+    one source_file. Precise, and immune to cross-scheme contamination.
+
+  Route 2 "broad_scheme_discovery":
+    No scheme named. Rank the 46 cards, take the top scheme_limit, then for each
+    rank its own chunks with rank_source_chunks() and take chunks_per_scheme.
+
+  RetrievalResult carries: route, exact_match, schemes (list[SchemeHit]),
+  chunks_by_source (dict source_file -> list[ChunkHit]). ChunkHit includes
+  rank_within_scheme, which is what revealed the "3 chunks is too shallow"
+  problem.
+
+
+--------------------------------------------------------------------------------
+8. MEASURED RESULTS (as of 2026-10-25)
+--------------------------------------------------------------------------------
+
+Full detail, per case, in data/evaluation/results/router_retrieval_report.md
+and the matching .json. Summary of the numbers that drove decisions:
+
+BROAD SUITE — 8 labeled multi-gold questions. Baseline = flat chunk index,
+top-30 candidates, deduped to unique schemes.
+
+                                    Flat baseline   Metadata cards   Enriched cards
+  Precision@1                            25.0%           37.5%            50.0%
+  MRR@5                                  45.2%           50.4%            64.6%
+  Recall@5 (5 schemes x 3 chunks)        54.2%           44.8%            57.3%
+  Relevant chunks in a 9-chunk context   45.8%           37.5%            41.7%
+  Relevant chunks in a 15-chunk context  38.3%           32.5%            40.0%
+  Cases regressed vs baseline                —               3                0
+
+  Adding the Summary line to the cards was the single biggest win. It moved
+  "economically-weaker-sections" and "low-income-family-financial-assistance"
+  from *no gold scheme in the top 5* to ranks 3 and 2.
+
+NAMED SUITE — 10 labeled intent questions.
+
+  Exact-route accuracy                          90% (9/10)
+  First routed scheme correct                  100%
+  Evidence recall@5, flat baseline              60%
+  Evidence recall@5, router 3 chunks/scheme     50%   <- too shallow
+  Evidence recall@5, router 5 chunks/scheme    100%   <- use this
+  Flat baseline context purity (chunks from the right scheme)  68%
+
+100-CASE DIAGNOSTIC — descriptive single-scheme questions. This suite is NOT
+the router's target; it exists to prove the router should not replace flat
+retrieval everywhere.
+
+  Precision@1    baseline 79.0%   router 76.0%
+  Recall@5       baseline 97.0%   router 92.0%
+  MRR@5          baseline 86.5%   router 83.3%
+  Route split: 91 broad, 9 exact. Exact-route precision 66.7% (3 false positives).
+
+LATENCY (CPU, single query end-to-end including encoding, 18 questions x 3):
+  Flat baseline   mean 39.9 ms   median 40.0   p95 46.8
+  Router 3x3      mean 88.8 ms   median 58.9   p95 200.1
+
+
+--------------------------------------------------------------------------------
+9. FUTURE WORK, IN PRIORITY ORDER
+--------------------------------------------------------------------------------
+
+The order below is deliberate. The Streamlit app is DEFERRED to P7 by explicit
+instruction: "leave that streamlit app that is not yet finalised, first we'll do
+the development of the RAG system." Do not start at the app. Work P1 -> P6 first
+and validate every change with the evaluation harnesses, not with the UI.
+
+P1. APPLY THE MEASURED ROUTER SETTINGS. Do not ship the defaults.
+    - Named/exact route: chunks_per_scheme=5, not 3. Evidence recall@5 goes
+      50% -> 100%. Four gold chunks sit at within-scheme rank 4, one at rank 5.
+    - Broad route: scheme_limit=5, not 3. P@1 and MRR are identical, and R@5
+      rises 44.8% -> 57.3%. Several gold schemes sit at card rank 4-6.
+    - Descriptive single-scheme questions: flat retrieval still wins (79% vs
+      76% P@1). Keep a flat fallback path; do not route everything through
+      cards.
+
+P2. ROUTE GUARDRAILS. Exact-route precision is only 66.7%. Three known false
+    positives, all in scheme_matching.match_scheme():
+      - "goa-housing-2": question names Assam's "Aponar Apon Ghar" as a CONTRAST
+        ("named differently from"). Router goes to the contrast scheme.
+      - "agri-business-training-2": the phrase "agricultural extension service
+        providers" fuzzy-matches the "Agricultural Extension" title; gold is
+        Agri-Clinics.
+      - "labour-board-death-gujarat-2": generic "accidental-death benefit"
+        fuzzy-matches the Puducherry scheme; gold is Gujarat.
+    Fix: refuse the exact route when the query contains multiple scheme titles,
+    contrast/negation cues ("not", "instead", "named differently from"), or only
+    a generic title. Ask for clarification when fuzzy candidates are within
+    AMBIGUITY_MARGIN.
+
+P3. HYBRID / LEXICAL CARD RETRIEVAL. The remaining broad-query failures are
+    lexical, not semantic.
+      - "economically weaker sections": aaby.txt contains that EXACT phrase in
+        its beneficiary_category metadata, yet its card still ranks 22/46.
+        Prose enrichment moved it 29 -> 22 and no further.
+      - "low-income-student" (gold aaby, aavy): fails outright at every card
+        rank (19 and 32). The supporting sentences exist in those documents —
+        aaby has "scholarship to the children of the insured", aavy has "free
+        education to poor children of construction workers" — but neither lands
+        in the first four General-section sentences, and the query phrasing
+        matches education-loan cards harder.
+    Add BM25 or an exact-phrase boost over card_text, or take the semantic
+    top-20 and rerank with a cross-encoder. This is now the top retrieval lever.
+
+P4. CHUNK RERANKING. Top-1 evidence is only 40% even when recall@5 is 100% —
+    the first chunk of a scheme is usually its intro, not the
+    eligibility/benefits/documents section the question asks about. Chunk
+    metadata already carries "section"; use it, or rerank within-scheme
+    candidates with a cross-encoder.
+
+P5. EXPAND THE BROAD TEST SET. 8 hand-labeled cases drove the card-enrichment
+    decision, and several strategy deltas were exactly one case wide. Growing
+    data/evaluation/broad_retrieval_cases.json to 25-30 questions would make the
+    next round of tuning trustworthy. Gold lists are high-confidence, not
+    exhaustive — that is a known labeling limitation.
+
+P6. REPO HYGIENE.
+    - pytest is not in requirements.txt but the tests are unittest-style. Either
+      add pytest or document `python -m unittest discover -s tests` in the README.
+    - src/ingestion/__pycache__/cleaner.cpython-312.pyc is TRACKED in git. Add
+      __pycache__/ to .gitignore and `git rm --cached` it.
+    - README.md is stale: it documents data/schemes.json and the keyword
+      retriever, and never mentions metadata extraction, chunking, the FAISS
+      store, the router, or the evaluation suites. Rewrite it around the actual
+      pipeline in section 4.
+    - Stray logs at the repo root: embedding_build_stdout.log,
+      embedding_build_stderr.log. Delete or gitignore.
+    - data/vector_store/ and data/evaluation/results/ are gitignored, so the
+      indices and the reports are not version controlled. The reports are small
+      and valuable — consider un-ignoring data/evaluation/results/*.md.
+
+P7. REBUILD THE STREAMLIT APP ON TOP OF THE ROUTER. DEFERRED — do this last,
+    only after P1-P5 have settled the retrieval layer. The app is not
+    finalized and is intentionally out of scope for now.
+    - app.py crashes: data/schemes.json is gone.
+    - rag.py's keyword SchemeRetriever must be replaced by SchemeRetrievalRouter
+      over the FAISS store. Build the LLM context from ChunkHit.text, grouped by
+      scheme, and cite each scheme's official_url (available in the metadata
+      JSONs and carried into chunk metadata).
+    - Keep the offline extractive fallback and the eligibility disclaimer; they
+      are deliberate portfolio features, not leftovers.
+    - Keep the model load behind st.cache_resource — encoding on every message
+      would make the UI unusable.
+
+
+--------------------------------------------------------------------------------
+10. CONVENTIONS AND GOTCHAS
+--------------------------------------------------------------------------------
+
+- Encoding. The corpus contains the rupee sign and Devanagari text. On Windows
+  every command needed PYTHONIOENCODING=utf-8 to avoid a cp1252
+  UnicodeEncodeError. On Linux this is unnecessary — UTF-8 is the default. If
+  you see that error, something is still running under a Windows code page.
+
+- Do not run stages out of order. build_scheme_card_index reads the chunk index
+  artifacts; the evaluation harness reads both. If you rebuild chunks (stage 4)
+  you MUST rerun stages 5, 6 and 7, or the indices silently disagree with the
+  chunk files and every metric is wrong.
+
+- first_nonempty() in build_scheme_card_index.py RAISES on inconsistent
+  metadata. That is intentional: it caught real cases where one scheme's chunks
+  disagreed about the state or ministry. If it fires, fix the metadata JSON in
+  data/processed/metadata/ — do not weaken the check.
+
+- The preprocessor (src/chunking/preprocessor.py) is doing real work on dirty
+  scraped HTML: it strips MyScheme navigation chrome, splits inline section
+  headings ("BenefitsUnder..." -> heading + body), removes a duplicated second
+  copy of the document that MyScheme pages often contain, and normalizes lists.
+  Chunk quality depends on it. If retrieval regresses after touching ingestion,
+  look here first.
+
+- Section headings are duplicated as a list in BOTH preprocessor.py and
+  common.py, and the two lists are not identical (preprocessor also has
+  "Negative List of Activities"). Keep them in sync or extract a shared constant.
+
+- Chunking config: RecursiveCharacterTextSplitter, CHUNK_SIZE=500 tokens,
+  CHUNK_OVERLAP=75, length measured with tiktoken cl100k_base. Non-"General"
+  sections get a "Section: <name>" prefix injected into the chunk text.
+
+- The 75-token overlap means adjacent chunks share sentences. Any dedupe or
+  summarization logic over chunk text must account for that.
+
+- Tests use a FakeModel returning 2-dim vectors, so they never load the real
+  419 MB model. Keep it that way — the suite runs in ~10 ms.
+
+- Nothing in this repo is deployed. There is no secrets management beyond the
+  local .env. Never commit .env.
+
+
+--------------------------------------------------------------------------------
+11. VM OPERATIONS NOTES
+--------------------------------------------------------------------------------
+
+- This is a development box reached from a phone via the Qoder mobile app
+  (Qoder CLI daemon mode: `qoder remote-control` in the project directory).
+  It is not a deployment target.
+- The daemon must be running for the phone to dispatch tasks. Run it inside
+  tmux, or as a systemd unit, so an SSH disconnect does not kill it.
+- A stopped VM costs only its disk. An always-on e2-standard-2 is roughly
+  $60/month, and the $300 trial credit also expires 90 days after signup
+  regardless of how much is spent. Stop the VM when not actively working —
+  but note that a stopped VM cannot receive tasks from the phone.
+- If you need to view the Streamlit UI from the phone, forward the port over
+  SSH (`ssh -L 8501:localhost:8501 <vm>`) rather than opening 8501 to the
+  internet.
+
+================================================================================
+END OF HANDOFF
+================================================================================

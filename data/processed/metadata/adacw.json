@@ -1,0 +1,16 @@
+{
+  "scheme_name": "Accidental Death Assistance for the Construction Workers",
+  "abbreviation": null,
+  "state": "Delhi",
+  "ministry": null,
+  "department": "Labour Department",
+  "scheme_type": "Financial Assistance",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Construction Workers",
+    "Nominees/Dependents of registered members"
+  ],
+  "application_mode": "Online",
+  "official_url": "https://bocw.delhi.gov.in/",
+  "source_file": "adacw.txt"
+}

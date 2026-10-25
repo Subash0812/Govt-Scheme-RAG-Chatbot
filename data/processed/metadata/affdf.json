@@ -1,0 +1,16 @@
+{
+  "scheme_name": "Financial Assistance For Procuring Mobility Equipment To Disabled Ex-Servicemen (All Ranks)",
+  "abbreviation": null,
+  "state": null,
+  "ministry": "Ministry of Defence",
+  "department": "Department of Ex-Servicemen Welfare",
+  "scheme_type": "Financial Assistance",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Ex-Servicemen",
+    "Disabled Ex-Servicemen"
+  ],
+  "application_mode": "Offline",
+  "official_url": "https://ksb.gov.in/",
+  "source_file": "affdf.txt"
+}

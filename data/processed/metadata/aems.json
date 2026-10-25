@@ -1,0 +1,16 @@
+{
+  "scheme_name": "Agriculture Engineering (Mechanical) Scheme",
+  "abbreviation": null,
+  "state": "Meghalaya",
+  "ministry": null,
+  "department": "Department of Agriculture & Farmers' Welfare",
+  "scheme_type": "Subsidy",
+  "sponsorship": "State Plan Scheme",
+  "beneficiary_category": [
+    "Farmers",
+    "bonafide farmer engaged in agriculture"
+  ],
+  "application_mode": "Offline",
+  "official_url": null,
+  "source_file": "aems.txt"
+}

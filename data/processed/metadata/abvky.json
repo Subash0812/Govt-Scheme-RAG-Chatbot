@@ -1,0 +1,16 @@
+{
+  "scheme_name": "Atal Beemit Vyakti Kalyan Yojana",
+  "abbreviation": "ABVKY",
+  "state": null,
+  "ministry": "Ministry Of Labour and Employment",
+  "department": null,
+  "scheme_type": null,
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Insured Persons (IPs) who have become unemployed",
+    "Employees covered under the ESI Act"
+  ],
+  "application_mode": "Online and Offline",
+  "official_url": "https://esic.gov.in/",
+  "source_file": "abvky.txt"
+}

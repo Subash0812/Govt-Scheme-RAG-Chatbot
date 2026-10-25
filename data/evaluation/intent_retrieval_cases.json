@@ -1,0 +1,62 @@
+[
+  {
+    "id": "capital-subsidy-eligibility",
+    "question": "What are the eligibility criteria for the 25% Capital Investment Subsidy Scheme?",
+    "gold_source_file": "25-ciss.txt",
+    "gold_chunk_ids": ["25-ciss.txt_recursive_2", "25-ciss.txt_recursive_6"]
+  },
+  {
+    "id": "aabcs-beneficiaries",
+    "question": "Who can benefit from the Annal Ambedkar Business Champions Scheme?",
+    "gold_source_file": "aabcs.txt",
+    "gold_chunk_ids": ["aabcs.txt_recursive_2", "aabcs.txt_recursive_5"]
+  },
+  {
+    "id": "capital-subsidy-financial-assistance",
+    "question": "What financial assistance is provided under the 25% Capital Investment Subsidy Scheme?",
+    "gold_source_file": "25-ciss.txt",
+    "gold_chunk_ids": ["25-ciss.txt_recursive_2", "25-ciss.txt_recursive_6"]
+  },
+  {
+    "id": "aabcs-application",
+    "question": "How can a beneficiary apply for the Annal Ambedkar Business Champions Scheme?",
+    "gold_source_file": "aabcs.txt",
+    "gold_chunk_ids": ["aabcs.txt_recursive_3", "aabcs.txt_recursive_7"]
+  },
+  {
+    "id": "aabcs-documents",
+    "question": "What documents are required to apply for the Annal Ambedkar Business Champions Scheme?",
+    "gold_source_file": "aabcs.txt",
+    "gold_chunk_ids": ["aabcs.txt_recursive_3"]
+  },
+  {
+    "id": "aaby-age-limit",
+    "question": "What is the age limit for beneficiaries of Aam Aadmi Bima Yojana?",
+    "gold_source_file": "aaby.txt",
+    "gold_chunk_ids": ["aaby.txt_recursive_5", "aaby.txt_recursive_7"]
+  },
+  {
+    "id": "merit-grant-implementer",
+    "question": "Which department is responsible for implementing the Award of Adhoc Merit Grant to Scheduled Caste Students?",
+    "gold_source_file": "aamgsiscs.txt",
+    "gold_chunk_ids": ["aamgsiscs.txt_recursive_1", "aamgsiscs.txt_recursive_3"]
+  },
+  {
+    "id": "atal-amrit-application-process",
+    "question": "What is the official application process for the Atal Amrit Abhiyan Scheme?",
+    "gold_source_file": "aaas-assam.txt",
+    "gold_chunk_ids": ["aaas-assam.txt_recursive_4"]
+  },
+  {
+    "id": "arogya-nidhi-benefits",
+    "question": "What benefits does the Assam Arogya Nidhi Scheme provide to eligible beneficiaries?",
+    "gold_source_file": "aan.txt",
+    "gold_chunk_ids": ["aan.txt_recursive_2"]
+  },
+  {
+    "id": "capital-subsidy-ineligibility",
+    "question": "What are the conditions under which a person becomes ineligible for the 25% Capital Investment Subsidy Scheme?",
+    "gold_source_file": "25-ciss.txt",
+    "gold_chunk_ids": ["25-ciss.txt_recursive_3"]
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "scheme_name": "Agriculture Academic Studies Scheme",
+  "abbreviation": null,
+  "state": "Meghalaya",
+  "ministry": null,
+  "department": "Department of Agriculture & Farmers' Welfare",
+  "scheme_type": "Sponsorship",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Student",
+    "Under Graduate",
+    "General",
+    "OBC",
+    "SC",
+    "ST"
+  ],
+  "application_mode": "Online",
+  "official_url": "https://www.megagriculture.gov.in",
+  "source_file": "aass.txt"
+}

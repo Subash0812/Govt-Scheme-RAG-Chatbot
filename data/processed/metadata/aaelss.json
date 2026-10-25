@@ -1,0 +1,16 @@
+{
+  "scheme_name": "Assam Abhinandan Education Loan Subsidy Scheme",
+  "abbreviation": null,
+  "state": "Assam",
+  "ministry": null,
+  "department": "Finance Department",
+  "scheme_type": "Subsidy",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Students",
+    "Students pursuing higher education"
+  ],
+  "application_mode": "Online",
+  "official_url": "https://assam.gov.in/assam-abhinandan-education-loan-subsidy-scheme",
+  "source_file": "aaelss.txt"
+}

@@ -1,0 +1,18 @@
+{
+  "scheme_name": "AFFDF-Financial Assistance For Treatment Of Serious Diseases To Non Pensioner Ex-Servicemen (All Ranks)/Widows",
+  "abbreviation": "AFFDF",
+  "state": null,
+  "ministry": "Ministry Of Defence",
+  "department": null,
+  "scheme_type": null,
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Non Pensioner Ex-Servicemen",
+    "Widows",
+    "Ex-Servicemen",
+    "Widow Of Ex-Servicemen"
+  ],
+  "application_mode": "Online",
+  "official_url": "https://ksb.gov.in/",
+  "source_file": "affdf-serious-disease-treatment.txt"
+}

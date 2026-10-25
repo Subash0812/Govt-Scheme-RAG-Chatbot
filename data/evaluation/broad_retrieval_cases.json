@@ -1,0 +1,42 @@
+[
+  {
+    "id": "farmer-financial-assistance",
+    "question": "Which government schemes provide financial assistance to farmers?",
+    "gold_source_files": ["agfiscmpwa.txt", "agr2fmsfotscst.txt", "agr3fmsstf.txt", "agr4fmsscf.txt", "agr50s-apt.txt", "abn.txt"]
+  },
+  {
+    "id": "economically-weaker-sections",
+    "question": "Which schemes are available for economically weaker sections?",
+    "gold_source_files": ["aaby.txt", "aaas-assam.txt", "aan.txt", "aasra.txt"]
+  },
+  {
+    "id": "student-scholarships",
+    "question": "Are there any schemes that provide scholarships to students?",
+    "gold_source_files": ["aaby.txt", "aamgsiscs.txt"]
+  },
+  {
+    "id": "women-financial-support",
+    "question": "Which schemes specifically provide financial support to women or girls?",
+    "gold_source_files": ["abhb.txt", "admptpfdap.txt"]
+  },
+  {
+    "id": "farmer-personalised",
+    "question": "I am a farmer. Are there any government schemes that can help me financially?",
+    "gold_source_files": ["agfiscmpwa.txt", "agr2fmsfotscst.txt", "agr3fmsstf.txt", "agr4fmsscf.txt", "agr50s-apt.txt", "abn.txt"]
+  },
+  {
+    "id": "low-income-student",
+    "question": "I am a student from a low-income family. What government schemes can I apply for?",
+    "gold_source_files": ["aaby.txt", "aavy.txt"]
+  },
+  {
+    "id": "woman-small-business",
+    "question": "I am a woman starting a small business. Are there any schemes that can help me?",
+    "gold_source_files": ["25-ciss.txt", "aabcs.txt"]
+  },
+  {
+    "id": "low-income-family-financial-assistance",
+    "question": "My family has a low income and I need financial assistance. Which schemes might I qualify for?",
+    "gold_source_files": ["aaby.txt", "aaas-assam.txt", "aan.txt", "aasra.txt"]
+  }
+]

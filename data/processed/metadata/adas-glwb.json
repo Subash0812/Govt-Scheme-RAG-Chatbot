@@ -1,0 +1,19 @@
+{
+  "scheme_name": "Accidental Death Assistance Scheme- Gujarat Labour Welfare Board",
+  "abbreviation": null,
+  "state": "Gujarat",
+  "ministry": null,
+  "department": "Labour, Skill Development & Employment Department",
+  "scheme_type": "Financial Assistance",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "workers (Shramyogis)",
+    "family members of workers (Shramyogis)",
+    "Industrial Worker",
+    "Labour",
+    "Organized Worker"
+  ],
+  "application_mode": "Online",
+  "official_url": "https://sanman.gujarat.gov.in/",
+  "source_file": "adas-glwb.txt"
+}

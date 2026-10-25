@@ -1,0 +1,16 @@
+{
+  "scheme_name": "Abhinandan Education Loan Subsidy Scheme",
+  "abbreviation": null,
+  "state": "Assam",
+  "ministry": null,
+  "department": null,
+  "scheme_type": "Subsidy",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Students",
+    "Students pursuing higher education"
+  ],
+  "application_mode": "Online and Offline",
+  "official_url": null,
+  "source_file": "aelss.txt"
+}

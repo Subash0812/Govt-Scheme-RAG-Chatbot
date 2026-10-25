@@ -1,0 +1,23 @@
+{
+  "scheme_name": "Agricultural Extension",
+  "abbreviation": "SMAE",
+  "state": null,
+  "ministry": "Ministry Of Agriculture and Farmers Welfare",
+  "department": null,
+  "scheme_type": null,
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Farmers",
+    "Agriculture Graduates",
+    "Unemployed Agricultural Graduates",
+    "Agricultural Diploma Holders",
+    "Intermediate in Agriculture and Biological Science Graduates",
+    "Rural Youth",
+    "Rural Artisans",
+    "Farm Women",
+    "Agri-Input Dealers"
+  ],
+  "application_mode": null,
+  "official_url": null,
+  "source_file": "ae.txt"
+}

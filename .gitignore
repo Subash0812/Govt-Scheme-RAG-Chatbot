@@ -1,1 +1,25 @@
-.venv
+# Environments
+venv
+.venv/
+env/
+
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Large generated artifacts (rebuild with the pipeline)
+data/models/
+data/vector_store/
+
+# Evaluation outputs: keep the small reports, ignore bulk dumps
+data/evaluation/results/*
+!data/evaluation/results/*.md
+!data/evaluation/results/*.json

@@ -1,0 +1,16 @@
+{
+  "scheme_name": "Assistance For Purchase of Aids/Appliances",
+  "abbreviation": null,
+  "state": "Chandigarh",
+  "ministry": null,
+  "department": "Social Welfare, Women & Child Development",
+  "scheme_type": "Financial Assistance",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "physically handicapped persons",
+    "Persons with Disabilities (PwDs)"
+  ],
+  "application_mode": "Online",
+  "official_url": "https://serviceonline.gov.in/",
+  "source_file": "afpoaa.txt"
+}

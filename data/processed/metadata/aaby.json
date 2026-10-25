@@ -1,0 +1,25 @@
+{
+  "scheme_name": "Aam Aadmi Bima Yojana",
+  "abbreviation": "AABY",
+  "state": "Assam",
+  "ministry": null,
+  "department": null,
+  "scheme_type": "Social Security",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Unorganized sector",
+    "Economically weaker sections",
+    "Landless agricultural labourers",
+    "Rural artisans",
+    "Fishermen",
+    "Weavers",
+    "Handicraft artisans",
+    "Street vendors",
+    "Ragpickers",
+    "Sanitation workers",
+    "Female-headed households"
+  ],
+  "application_mode": "Offline",
+  "official_url": null,
+  "source_file": "aaby.txt"
+}

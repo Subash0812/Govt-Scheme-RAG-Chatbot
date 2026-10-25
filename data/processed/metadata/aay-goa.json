@@ -1,0 +1,15 @@
+{
+  "scheme_name": "Atal Asra Yojana",
+  "abbreviation": null,
+  "state": "Goa",
+  "ministry": null,
+  "department": "Department of Tribal Welfare",
+  "scheme_type": "Financial Assistance",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Scheduled Tribes"
+  ],
+  "application_mode": "Offline",
+  "official_url": "https://tribalwelfare.goa.gov.in/attachments/article/45/ATAL%20ASRA%20FORM%20(New).pdf",
+  "source_file": "aay-goa.txt"
+}

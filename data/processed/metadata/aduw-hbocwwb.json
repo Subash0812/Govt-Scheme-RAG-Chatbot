@@ -1,0 +1,16 @@
+{
+  "scheme_name": "Assistance On Death Of The Unregistered Worker (HBOCWWB)",
+  "abbreviation": null,
+  "state": "Haryana",
+  "ministry": null,
+  "department": "Labour Department Haryana",
+  "scheme_type": "Financial Assistance",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Legal heir/dependent family member of an unregistered worker",
+    "Unregistered Worker"
+  ],
+  "application_mode": "Online",
+  "official_url": "https://saralharyana.gov.in/",
+  "source_file": "aduw-hbocwwb.txt"
+}

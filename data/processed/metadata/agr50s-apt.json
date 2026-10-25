@@ -1,0 +1,16 @@
+{
+  "scheme_name": "AGR-50 Scheme-Assistance To Purchase Tractors",
+  "abbreviation": null,
+  "state": "Gujarat",
+  "ministry": null,
+  "department": "Department of Agriculture, Farmers Welfare & Co-operation",
+  "scheme_type": "Financial Assistance",
+  "sponsorship": "100% State Sponsored",
+  "beneficiary_category": [
+    "Farmers",
+    "Small-scale farmers"
+  ],
+  "application_mode": "Online",
+  "official_url": "https://ikhedut.gujarat.gov.in/iKhedutPublicScheme/Public/frm_Public_SchemeDetails.aspx",
+  "source_file": "agr50s-apt.txt"
+}

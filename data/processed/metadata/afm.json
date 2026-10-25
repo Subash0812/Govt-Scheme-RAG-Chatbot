@@ -1,0 +1,16 @@
+{
+  "scheme_name": "Assistance for Marriage",
+  "abbreviation": null,
+  "state": "Tamil Nadu",
+  "ministry": null,
+  "department": "Department for the Welfare of Differently Abled Persons",
+  "scheme_type": "Financial Assistance",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Differently-abled Person",
+    "Children of differently-abled person"
+  ],
+  "application_mode": "Offline",
+  "official_url": null,
+  "source_file": "afm.txt"
+}

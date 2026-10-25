@@ -1,0 +1,16 @@
+{
+  "scheme_name": "Amar Fasal Amar Gola",
+  "abbreviation": null,
+  "state": "West Bengal",
+  "ministry": "Ministry of Agriculture",
+  "department": "Department of Agriculture",
+  "scheme_type": "Subsidy",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "Marginal farmers",
+    "Small and marginal farmers"
+  ],
+  "application_mode": "Offline",
+  "official_url": null,
+  "source_file": "afag.txt"
+}

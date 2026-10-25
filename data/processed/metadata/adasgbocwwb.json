@@ -1,0 +1,16 @@
+{
+  "scheme_name": "Accidental Death Assistance Scheme (GBOCWWB)",
+  "abbreviation": null,
+  "state": "Gujarat",
+  "ministry": null,
+  "department": "Labour, Skill Development & Employment Department",
+  "scheme_type": "Financial Assistance",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "legal heirs of the deceased construction workers",
+    "construction workers"
+  ],
+  "application_mode": "Online",
+  "official_url": "https://sanman.gujarat.gov.in/",
+  "source_file": "adasgbocwwb.txt"
+}

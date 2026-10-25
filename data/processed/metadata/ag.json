@@ -1,0 +1,16 @@
+{
+  "scheme_name": "Advocate Grant",
+  "abbreviation": null,
+  "state": "Kerala",
+  "ministry": null,
+  "department": "Backward Classes Development Department",
+  "scheme_type": "Grant",
+  "sponsorship": null,
+  "beneficiary_category": [
+    "law graduates belonging to backward classes",
+    "OBC"
+  ],
+  "application_mode": "Offline",
+  "official_url": "https://bcdd.kerala.gov.in/wp-content/uploads/2021/07/pdf-3.pdf",
+  "source_file": "ag.txt"
+}
