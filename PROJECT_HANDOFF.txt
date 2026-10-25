@@ -208,14 +208,30 @@ from scratch on a new machine, run these in order from the repo root:
 
 Python 3.12 was used for development. requirements.txt is complete.
 
+FAST PATH — the whole machine setup is scripted and idempotent:
+
+  bash vm/bootstrap.sh
+
+It installs system packages, clones the repo shallow into ~/schemebot, builds
+.venv, installs requirements, runs the unit tests, downloads the embedding model
+and builds both indices if they are missing, then installs the Qoder CLI.
+The manual equivalent is below.
+
   python3 -m venv .venv
   source .venv/bin/activate
   pip install -r requirements.txt
 
-  # Secret — NOT in git. Copy it from the old machine or recreate it:
+Getting the code: clone with --depth 1. The full history still contains about
+400 MB of an old committed .venv that has since been untracked; a shallow clone
+avoids pulling it.
+
+  git clone --depth 1 https://github.com/Subash0812/Govt-Scheme-RAG-Chatbot.git
+
+  # Secret — NOT in git. Copy it from the old machine over scp, or recreate it:
   #   GEMINI_API_KEY=<your key>
   #   GEMINI_MODEL=gemini-2.5-flash        (optional; rag.py default)
   printf 'GEMINI_API_KEY=...\n' > .env
+  # .env.example in the repo is an empty template. Never commit .env.
 
 The embedding model is gitignored (~419 MB). Two options:
 
@@ -494,7 +510,16 @@ P7. REBUILD THE STREAMLIT APP ON TOP OF THE ROUTER. DEFERRED — do this last,
   (Qoder CLI daemon mode: `qoder remote-control` in the project directory).
   It is not a deployment target.
 - The daemon must be running for the phone to dispatch tasks. Run it inside
-  tmux, or as a systemd unit, so an SSH disconnect does not kill it.
+  tmux, or as a systemd unit, so an SSH disconnect does not kill it:
+      sudo bash vm/install-remote-control-service.sh
+  (systemctl status/restart/logs -u qoder-remote)
+- Bring-up scripts live in vm/. bootstrap.sh is idempotent; rerun it after a
+  fresh clone or a Python dependency change.
+- What is NOT in git, and therefore has to be copied or rebuilt on a new box:
+      .env                        -> scp, never commit
+      data/models/ (419 MB)       -> stage 5 downloads it
+      data/vector_store/ (1.9 MB) -> copy by scp, or rerun stages 5 and 6
+  Everything else, including the evaluation reports, is tracked.
 - A stopped VM costs only its disk. An always-on e2-standard-2 is roughly
   $60/month, and the $300 trial credit also expires 90 days after signup
   regardless of how much is spent. Stop the VM when not actively working —
