@@ -509,6 +509,9 @@ P7. REBUILD THE STREAMLIT APP ON TOP OF THE ROUTER. DEFERRED — do this last,
 - This is a development box reached from a phone via the Qoder mobile app
   (Qoder CLI daemon mode: `qoder remote-control` in the project directory).
   It is not a deployment target.
+- Machine details, IP, access commands, cost and start/stop are in
+  VM_ACCESS.txt in the project root. It is gitignored, so it exists only on
+  the machine itself.
 - The daemon must be running for the phone to dispatch tasks. Run it inside
   tmux, or as a systemd unit, so an SSH disconnect does not kill it:
       sudo bash vm/install-remote-control-service.sh
