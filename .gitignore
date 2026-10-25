@@ -6,6 +6,9 @@ env/
 # Secrets
 .env
 
+# Machine-specific notes (carries the VM's public IP)
+VM_ACCESS.txt
+
 # Python
 __pycache__/
 *.py[cod]
